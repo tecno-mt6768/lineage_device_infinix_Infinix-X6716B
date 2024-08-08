@@ -4,11 +4,21 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/infinix/FULL-64
+DEVICE_PATH := device/infinix/X6716B
 
 # A/B
 AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS +=
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    product \
+    system \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor \
+    vendor
+
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
@@ -62,7 +72,12 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
 BOARD_SUPER_PARTITION_GROUPS := infinix_dynamic_partitions
-BOARD_INFINIX_DYNAMIC_PARTITIONS_PARTITION_LIST :=
+BOARD_INFINIX_DYNAMIC_PARTITIONS_PARTITION_LIST := \
+    product \
+    system \
+    vendor \
+    system_ext
+
 BOARD_INFINIX_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
 # Platform
