@@ -27,7 +27,7 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := Infinix-X6716B
+TARGET_BOOTLOADER_BOARD_NAME := X6716B
 TARGET_NO_BOOTLOADER := true
 
 # Display
@@ -42,8 +42,8 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
-TARGET_KERNEL_CONFIG := FULL-64_defconfig
-TARGET_KERNEL_SOURCE := kernel/infinix/FULL-64
+TARGET_KERNEL_CONFIG := X6716B_defconfig
+TARGET_KERNEL_SOURCE := kernel/infinix/X6716B
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
@@ -94,4 +94,4 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Inherit the proprietary files
-include vendor/infinix/FULL-64/BoardConfigVendor.mk
+include vendor/infinix/X6716B/BoardConfigVendor.mk
